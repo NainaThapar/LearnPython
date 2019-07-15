@@ -6,6 +6,7 @@ var bull;
 function showGame() {
   var el = document.getElementsByClassName("game");
   el[0].style.display = "block";
+  document.getElementById("num-input").focus();
   //console.log(el);
 }
 
@@ -13,7 +14,7 @@ function sumitNum() {
   var cowElmnt = "";
   var bullElmnt = "";
   var val = document.getElementById("num-input").value;
-  console.log(val);
+  //console.log(val);
   fetch(
     "http://localhost:5000/getcowbull?number=" +
       val +
@@ -27,18 +28,18 @@ function sumitNum() {
     })
     .then(text => {
       if (text.msg) {
-        console.log(text.msg);
+        //console.log(text.msg);
         alert(text.msg);
       } else {
         cnum = text.num;
         chance = text.chance + 1;
         cow = text.cows;
         bull = text.bulls;
-        console.log(text);
-        console.log(chance);
-        console.log(cnum);
-        console.log(cow);
-        console.log(bull);
+        //console.log(text);
+        //console.log(chance);
+        //console.log(cnum);
+        //console.log(cow);
+        //console.log(bull);
         for (var i = 0; i < cow; i++) {
           cowElmnt +=
             '<img src="./images/cow1.png" width="50px" height="50px" class="cow"/>';
@@ -60,9 +61,22 @@ function sumitNum() {
             ${bullElmnt} 
           </div>
           </div>`;
+        document.getElementById("num-input").value = "";
+        document.getElementById("num-input").focus();
       }
     });
 
   //adding html for the turn to display cows and bulls
   //var resContainer = document.getElementById('result-container').innerHTML;
+}
+
+function newgame() {
+  console.log("new game");
+  // var el = document.getElementsByClassName("game");
+  // el[0].style.display = "none";
+  chance = 1;
+  cnum = 0;
+  document.getElementById("result-container").innerHTML = "";
+  document.getElementById("num-input").value = "";
+  document.getElementById("num-input").focus();
 }

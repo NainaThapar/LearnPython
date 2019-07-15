@@ -11,8 +11,12 @@
         <img src="./images//logo.png" class="logo" />
         <span>LET'S PLAY COWS AND BULLS</span>
       </h1>
-
-      <button class="btn-style" onclick="showGame()">Start</button>
+      <div class="btn-container">
+        <button class="btn-style" onclick="showGame()">Start</button>
+        <button type="submit" class="btn-style" onclick="newgame()">
+          New Game
+        </button>
+      </div>
       <div class="game">
         <input
           type="tel"
@@ -24,7 +28,6 @@
         <button type="submit" class="submit-btn" onclick="sumitNum()">
           Enter
         </button>
-
         <div id="result-container"></div>
       </div>
     </div>

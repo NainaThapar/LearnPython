@@ -32,6 +32,8 @@ body {
   height: 30px;
   border-radius: 6px;
   cursor: pointer;
+  margin: 0 10px;
+  font-weight: bold;
 }
 
 .game {
@@ -83,4 +85,9 @@ body {
   margin-left: 17px;
   position: relative;
   top: -12px;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
 }
